@@ -1,0 +1,20 @@
+{
+  "name": "soda-vision-edge-frontend",
+  "private": true,
+  "version": "0.0.2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.17.0",
+    "@tensorflow/tfjs-node": "^4.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

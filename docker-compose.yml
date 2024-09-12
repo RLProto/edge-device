@@ -1,0 +1,135 @@
+services:
+  sv-frontend:
+    container_name: sv-frontend
+    build:
+      context: ./edge-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"
+    volumes:
+      - sv-frontend-data:/data
+    networks:
+      - sv-network
+    restart: unless-stopped
+
+  sv-backend:
+    container_name: sv-backend
+    build: 
+      context: ./edge-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8123:8123"
+    volumes:
+      - shared_model:/home/sodavision/app/core/data/temp_files
+    networks:
+      - sv-network
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://sodavision:vision@postgres/edge_logs
+    devices:
+      - /dev/video0:/dev/video0
+    depends_on:
+      - postgres
+
+  sv-inferencia-js:
+    container_name: sv-inferencia-js
+    build: 
+      context: ./inferencia-js
+      dockerfile: Dockerfile
+    ports:
+      - "7987:7987"
+    volumes:
+      - shared_model:/app/model
+    environment:
+      - MODEL_PATH=/app/model/
+    networks:
+      - sv-network
+    restart: unless-stopped
+    # depends_on:
+    #   - sv-backend
+
+  sv-inferencia-python:
+    container_name: sv-inferencia-python
+    build:
+      context: ./inference-model-cloud-raspberry4
+      dockerfile: Dockerfile
+    ports:
+      - "9999:9999"
+    volumes:
+      - shared_model:/workspace/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MODEL_PATH=/workspace/app/data
+    networks:
+      - sv-network
+    restart: unless-stopped
+
+  nodered:
+    container_name: nodered
+    depends_on:
+      - postgres
+      - mqtt-broker
+      - rabbitmq
+    build: 
+      context: ./edge-device
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - 1880:1880
+      - 53880:53880
+      - 53881:53881
+    volumes:
+      - node-red-data:/data
+    environment:
+      - TZ=America/Sao_Paulo
+    restart: unless-stopped
+    networks:
+      - sv-network
+
+  postgres:
+    image: postgres
+    container_name: edge-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: sodavision
+      POSTGRES_PASSWORD: vision
+      POSTGRES_DB: edge_logs
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sv-network
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: 'rabbitmq:3-management'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - sv-network
+    restart: unless-stopped
+
+  mqtt-broker:
+    container_name: eclipse-mosquitto
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./edge-device/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - sv-network
+    restart: unless-stopped
+
+
+volumes:
+  node-red-data:
+  postgres_data:
+  shared_model:
+  sv-frontend-data:
+
+networks:
+  sv-network:

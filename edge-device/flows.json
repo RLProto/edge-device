@@ -1,0 +1,1331 @@
+[
+    {
+        "id": "74e8984317268c05",
+        "type": "tab",
+        "label": "Fluxo OPC",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d2ebba3651eb6622",
+        "type": "tab",
+        "label": "Fluxo RabbitMQ",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ce922b35900aab9b",
+        "type": "tab",
+        "label": "Fluxo MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "50e447f66d1ee6ee",
+        "type": "amqp-broker",
+        "name": "",
+        "host": "rabbitmq",
+        "port": "5672",
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
+    },
+    {
+        "id": "7dcbfe262ec951fc",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:53880/UA/VisionOPC",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "5bb63ab418e13d1f",
+        "type": "websocket-client",
+        "path": "ws://host.docker.internal:8123/predict",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "0",
+        "subprotocol": "",
+        "headers": []
+    },
+    {
+        "id": "2e2a61221c389277",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "http://localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "407a01e4.6b637",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-broker",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0629490a315297bb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "69b9909b3ce00894",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "http://host.docker.internal",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "49f9d977fdbe1c2d",
+        "type": "amqp-broker",
+        "name": "",
+        "host": "host.docker.internal",
+        "port": "5672",
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
+    },
+    {
+        "id": "2ed718b2f995f7c3",
+        "type": "amqp-broker",
+        "name": "",
+        "host": "localhost",
+        "port": "5672",
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
+    },
+    {
+        "id": "e423d4230511a656",
+        "type": "amqp-broker",
+        "name": "",
+        "host": "rabbitmq",
+        "port": "5672",
+        "vhost": "",
+        "tls": false,
+        "credsFromSettings": false
+    },
+    {
+        "id": "fe3e46090d375b4f",
+        "type": "global-config",
+        "name": "global-config",
+        "env": [
+            {
+                "name": "MW_CONTRIB_AMQP_USERNAME",
+                "value": "guest",
+                "type": "str"
+            },
+            {
+                "name": "MW_CONTRIB_AMQP_PASSWORD",
+                "value": "guest",
+                "type": "str"
+            }
+        ]
+    },
+    {
+        "id": "6af8d2576e8147be",
+        "type": "comment",
+        "z": "74e8984317268c05",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dc39a36e558b3f5f",
+        "type": "comment",
+        "z": "74e8984317268c05",
+        "name": "READ",
+        "info": "# Leitura\n\nAqui pode-se configurar a leitura dos nós do OPCUA\n\nTambém pode-se definir de quanto em quanto tempo realizar a leitura.",
+        "x": 130,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6fa83287bd36031a",
+        "type": "comment",
+        "z": "74e8984317268c05",
+        "name": "Write",
+        "info": "",
+        "x": 130,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a1fa7b979cdc7301",
+        "type": "OpcUa-Server",
+        "z": "74e8984317268c05",
+        "port": "53880",
+        "name": "",
+        "endpoint": "opc.tcp://localhost:53880/UA/VisionOPC",
+        "users": "",
+        "nodesetDir": "",
+        "autoAcceptUnknownCertificate": true,
+        "registerToDiscovery": false,
+        "constructDefaultAddressSpace": true,
+        "allowAnonymous": true,
+        "endpointNone": true,
+        "endpointSign": true,
+        "endpointSignEncrypt": true,
+        "endpointBasic128Rsa15": true,
+        "endpointBasic256": true,
+        "endpointBasic256Sha256": true,
+        "maxNodesPerBrowse": 0,
+        "maxNodesPerHistoryReadData": 0,
+        "maxNodesPerHistoryReadEvents": 0,
+        "maxNodesPerHistoryUpdateData": 0,
+        "maxNodesPerRead": 0,
+        "maxNodesPerWrite": 0,
+        "maxNodesPerMethodCall": 0,
+        "maxNodesPerRegisterNodes": 0,
+        "maxNodesPerNodeManagement": 0,
+        "maxMonitoredItemsPerCall": 0,
+        "maxNodesPerHistoryUpdateEvents": 0,
+        "maxNodesPerTranslateBrowsePathsToNodeIds": 0,
+        "maxConnectionsPerEndpoint": 20,
+        "maxMessageSize": 4096,
+        "maxBufferSize": 4096,
+        "maxSessions": 20,
+        "x": 1020,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "749be3b89fc541d9",
+        "type": "function",
+        "z": "74e8984317268c05",
+        "name": "Add Pasta",
+        "func": "msg.payload = {opcuaCommand:\"addFolder\"}\nmsg.topic = \"ns=1;s=Variaveis\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [
+                "a1fa7b979cdc7301"
+            ]
+        ]
+    },
+    {
+        "id": "ae8998b98cd92c72",
+        "type": "inject",
+        "z": "74e8984317268c05",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "bb964f02f9da83fa",
+                "749be3b89fc541d9"
+            ]
+        ]
+    },
+    {
+        "id": "95f57d17bf66ed24",
+        "type": "function",
+        "z": "74e8984317268c05",
+        "name": "Add Variavel Classe",
+        "func": "msg.payload = {opcuaCommand:\"addVariable\"}\nmsg.topic = \"ns=1;s=classePrevista;datatype=String\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "a1fa7b979cdc7301"
+            ]
+        ]
+    },
+    {
+        "id": "1bf3088b708c2185",
+        "type": "function",
+        "z": "74e8984317268c05",
+        "name": "Add Variavel Valor",
+        "func": "msg.payload = {opcuaCommand:\"addVariable\"}\nmsg.topic = \"ns=1;s=valorPrevisto;datatype=Float\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 420,
+        "wires": [
+            [
+                "a1fa7b979cdc7301"
+            ]
+        ]
+    },
+    {
+        "id": "bb964f02f9da83fa",
+        "type": "delay",
+        "z": "74e8984317268c05",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "1bf3088b708c2185",
+                "95f57d17bf66ed24"
+            ]
+        ]
+    },
+    {
+        "id": "39c1384ba398f68d",
+        "type": "OpcUa-Client",
+        "z": "74e8984317268c05",
+        "endpoint": "7dcbfe262ec951fc",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "ms",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 720,
+        "y": 860,
+        "wires": [
+            [
+                "c3c27f3954684353"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c3c27f3954684353",
+        "type": "debug",
+        "z": "74e8984317268c05",
+        "name": "Cliente Valor",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "732389f50577caad",
+        "type": "inject",
+        "z": "74e8984317268c05",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 900,
+        "wires": [
+            [
+                "fd2f73cdcf20ea45",
+                "146ca9442f047a09"
+            ]
+        ]
+    },
+    {
+        "id": "66b157345230c079",
+        "type": "comment",
+        "z": "74e8984317268c05",
+        "name": "Construção Server",
+        "info": "# Construção\n\n\nAqui o server OPCUA é configurado\n",
+        "x": 170,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0a6b86b867adb133",
+        "type": "comment",
+        "z": "74e8984317268c05",
+        "name": "Description",
+        "info": "Dado esta sendo enviado para o servidor OPC pelo Backend Python",
+        "x": 230,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "fd2f73cdcf20ea45",
+        "type": "OpcUa-Event",
+        "z": "74e8984317268c05",
+        "root": "ns=1;s=valorPrevisto",
+        "activatecustomevent": false,
+        "eventtype": "i=2132",
+        "customeventtype": "",
+        "name": "",
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "39c1384ba398f68d"
+            ]
+        ]
+    },
+    {
+        "id": "146ca9442f047a09",
+        "type": "OpcUa-Event",
+        "z": "74e8984317268c05",
+        "root": "ns=1;s=classePrevista",
+        "activatecustomevent": false,
+        "eventtype": "i=2132",
+        "customeventtype": "",
+        "name": "",
+        "x": 500,
+        "y": 940,
+        "wires": [
+            [
+                "9172b7277d8cb787"
+            ]
+        ]
+    },
+    {
+        "id": "9172b7277d8cb787",
+        "type": "OpcUa-Client",
+        "z": "74e8984317268c05",
+        "endpoint": "7dcbfe262ec951fc",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "ms",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 720,
+        "y": 940,
+        "wires": [
+            [
+                "9659d517f25d1b5a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9659d517f25d1b5a",
+        "type": "debug",
+        "z": "74e8984317268c05",
+        "name": "Cliente Classe",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "function-node",
+        "type": "function",
+        "z": "d2ebba3651eb6622",
+        "name": "Process Message",
+        "func": "msg.payload = {\"status\": msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 520,
+        "wires": [
+            [
+                "http-request"
+            ]
+        ]
+    },
+    {
+        "id": "http-request",
+        "type": "http request",
+        "z": "d2ebba3651eb6622",
+        "name": "Send to FastAPI",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8123/continuous-inference",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 800,
+        "y": 520,
+        "wires": [
+            [
+                "debug"
+            ]
+        ]
+    },
+    {
+        "id": "debug",
+        "type": "debug",
+        "z": "d2ebba3651eb6622",
+        "name": "Debug Output",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1000,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "db953081030792b3",
+        "type": "amqp-in",
+        "z": "d2ebba3651eb6622",
+        "name": "Trigger Continuo",
+        "broker": "49f9d977fdbe1c2d",
+        "prefetch": 0,
+        "reconnectOnError": false,
+        "noAck": true,
+        "exchangeName": "soda.vision.inference",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "continua",
+        "exchangeDurable": true,
+        "queueName": "continua",
+        "queueType": "classic",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "function-node"
+            ]
+        ]
+    },
+    {
+        "id": "d413f34727c8b20d",
+        "type": "amqp-in",
+        "z": "d2ebba3651eb6622",
+        "name": "Trigger Intervalado",
+        "broker": "49f9d977fdbe1c2d",
+        "prefetch": 0,
+        "reconnectOnError": false,
+        "noAck": true,
+        "exchangeName": "soda.vision.inference",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "intervalada",
+        "exchangeDurable": true,
+        "queueName": "intervalada",
+        "queueType": "classic",
+        "queueExclusive": false,
+        "queueDurable": true,
+        "queueAutoDelete": false,
+        "headers": "{}",
+        "x": 370,
+        "y": 680,
+        "wires": [
+            [
+                "2156b5c5b7c981c7"
+            ]
+        ]
+    },
+    {
+        "id": "2156b5c5b7c981c7",
+        "type": "function",
+        "z": "d2ebba3651eb6622",
+        "name": "Process Message",
+        "func": "msg.payload = {\"data\": msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "cb328076b740ab85"
+            ]
+        ]
+    },
+    {
+        "id": "cb328076b740ab85",
+        "type": "http request",
+        "z": "d2ebba3651eb6622",
+        "name": "Send to FastAPI",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8123/inference-now",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 800,
+        "y": 680,
+        "wires": [
+            [
+                "4e441dfdf19a7833"
+            ]
+        ]
+    },
+    {
+        "id": "4e441dfdf19a7833",
+        "type": "debug",
+        "z": "d2ebba3651eb6622",
+        "name": "Debug Output",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1000,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "b6b3edfdeb6b4f33",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Continuo",
+        "info": "# Continuo\nEste cenário foi feito para receber informações para o Trigger Continuo\n\nTem como objetivo ler a informação de **Start/Stop** de quem estiver publicando em um determinado rota/Exchange configurado pelo usuário\n\nExchange da qual aqui esta sendo utilizada como exemplo\n\n## __soda.vision.inference__\n\nCom a Routing Key definida como\n\n## __continuous__\n\nExchange Type\n\n## __Direct__\n\nO comando **start** serve para informar que a predição deve ser Iniciada\nO comando **stop** serve para informar que a predição deve ser Finalizada\n",
+        "x": 200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "7c9cdb9b3103de97",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Intervalado",
+        "info": "# Intervalada\nEste cenário foi feito para receber informações para o Trigger Intervalado/Momenâneo\n\nTem como objetivo ler qualquer informação de quem estiver publicando em um determinado rota/Exchange configurado pelo usuário\n\nExchange da qual aqui esta sendo utilizada como exemplo\n\n## __soda.vision.inference__\n\nCom a Routing Key definida como\n\n## __intervalada__\n\nExchange Type\n\n## __Direct__\n\nToda mensagem recebida nesse endereço, com a lógica inicial, irá realizar a inferência no momento em que receber a mensagem",
+        "x": 200,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "1eaa4628e6ac4a21",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Recebimento de informações",
+        "info": "# Recebimento\nAqui você pode configurar em um cenário onde pode-se receber informações para realizar inferencia em determinada situação especifica que desejar.\n\nO objetivo é endereçar o recebimento de informações vindas do ETL para que possam ser recebidas no Nodered\n\nNeste ambiente temos o recebimento de informações para endereços via RabbitMQ\nE são duas rotas de receimento são orientadas ao Python,\n\nSeja para inferencia continua ou para inferencia intervalada/momentânea.",
+        "x": 140,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "13c5839a6de7ac7d",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Continuo Start",
+        "info": "# Continuo \n\nEste cenário foi feito para realização de envio de informações para o Trigger Continuo\n\nTem como objetivo de publicar a informação de **start** para quem estiver ouvindo em um determinado rota/Exchange\n\nO comando **start** deve iniciar a predição continua\n\nExchange da qual aqui esta sendo configurada aqui como exemplo \n\n## __soda.vision.inference__\n\nCom a Routing Key definida como\n\n## __continua__\n\nExchange Type\n\n## __Direct__\n\nO comando **start** serve para informar que a predição deve ser iniciada\n",
+        "x": 220,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "03aea29c074ff04b",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Intervalado",
+        "info": "# Envio Intervalado \n\nEste cenário foi feito para realização de envio de informações para o Trigger Intervalado/Momentâneo\n\nTem como objetivo de publicar a informação de start para quem estiver ouvindo em um determinado rota/Exchange\n\nExchange da qual aqui esta sendo configurada aqui como exemplo \n\n## __soda.vision.inference__\n\nCom a Routing Key definida como\n\n## __intervalada__\n\nExchange Type\n\n## __Direct__",
+        "x": 200,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fa9f1100bf9e21aa",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Envio de informações",
+        "info": "# Envio\nAqui você pode configurar em um cenário de exemplo o envio de informações para determinado endereço.\n\nO objetivo é simular o envio de informações do ETL para que possam ser recebidas no Nodered\n\nNeste ambiente temos o envio de informações para endereços via RabbitMQ\nE são duas rotas que são orientadas ao Python,\n\nSeja para inferencia continua ou para inferencia intervalada/momentânea.",
+        "x": 120,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c6ddc206c52273e7",
+        "type": "comment",
+        "z": "d2ebba3651eb6622",
+        "name": "Continuo Stop",
+        "info": "# Stop Continuo \n\nEste cenário foi feito para realização de envio de informações para o Trigger Continuo\n\nTem como objetivo de publicar a informação de **stop** para quem estiver ouvindo em um determinado rota/Exchange\n\nO comando **stop** deve parar a predição continua\n\nExchange da qual aqui esta sendo configurada aqui como exemplo \n\n## __soda.vision.inference__\n\nCom a Routing Key definida como\n\n## __continua__\n\nExchange Type\n\n## __Direct__\n\nO comando **stop** serve para informar que a predição deve ser interrompida\n",
+        "x": 220,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "38e2a46861d8e7e7",
+        "type": "amqp-out",
+        "z": "d2ebba3651eb6622",
+        "name": "Trigger de Envio Intervalado",
+        "broker": "49f9d977fdbe1c2d",
+        "reconnectOnError": false,
+        "exchangeName": "soda.vision.inference",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "intervalada",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{ \"headers\": {} }",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 620,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fd3dd20b4d4ba08e",
+        "type": "inject",
+        "z": "d2ebba3651eb6622",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "42",
+        "payloadType": "num",
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "38e2a46861d8e7e7"
+            ]
+        ]
+    },
+    {
+        "id": "95bda179e0654ce7",
+        "type": "amqp-out",
+        "z": "d2ebba3651eb6622",
+        "name": "Trigger de Envio Continuo Start",
+        "broker": "49f9d977fdbe1c2d",
+        "reconnectOnError": false,
+        "exchangeName": "soda.vision.inference",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "continua",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{ \"headers\": {} }",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 630,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fd350693a6083a62",
+        "type": "inject",
+        "z": "d2ebba3651eb6622",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "95bda179e0654ce7"
+            ]
+        ]
+    },
+    {
+        "id": "601d29bd925c384f",
+        "type": "amqp-out",
+        "z": "d2ebba3651eb6622",
+        "name": "Trigger de Envio Continuo Stop",
+        "broker": "49f9d977fdbe1c2d",
+        "reconnectOnError": false,
+        "exchangeName": "soda.vision.inference",
+        "exchangeType": "direct",
+        "exchangeRoutingKey": "continua",
+        "exchangeRoutingKeyType": "str",
+        "exchangeDurable": true,
+        "amqpProperties": "{ \"headers\": {} }",
+        "rpcTimeoutMilliseconds": 3000,
+        "outputs": 0,
+        "x": 630,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c4905cbd02f25e01",
+        "type": "inject",
+        "z": "d2ebba3651eb6622",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "601d29bd925c384f"
+            ]
+        ]
+    },
+    {
+        "id": "60f668b513e4da5a",
+        "type": "mqtt out",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "topic": "soda/vision/inference/continuous",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "69b9909b3ce00894",
+        "x": 620,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1cf48e98e340a897",
+        "type": "inject",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "60f668b513e4da5a"
+            ]
+        ]
+    },
+    {
+        "id": "c4d0bf89a5bab456",
+        "type": "mqtt in",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "topic": "soda/vision/inference/continuous",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "69b9909b3ce00894",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 410,
+        "y": 520,
+        "wires": [
+            [
+                "cfe37453a9785ad7"
+            ]
+        ]
+    },
+    {
+        "id": "dc072e3ee1170d57",
+        "type": "debug",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1070,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ee631622ed6e3c0d",
+        "type": "mqtt out",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "topic": "soda/vision/inference/interval",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "69b9909b3ce00894",
+        "x": 600,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e0524b518edfa9c4",
+        "type": "inject",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "ee631622ed6e3c0d"
+            ]
+        ]
+    },
+    {
+        "id": "4a79858fa0b1489d",
+        "type": "mqtt in",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "topic": "soda/vision/inference/interval",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "69b9909b3ce00894",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 400,
+        "y": 680,
+        "wires": [
+            [
+                "883db7f23aa9ff89"
+            ]
+        ]
+    },
+    {
+        "id": "3a8db9872d068555",
+        "type": "debug",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1070,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "883db7f23aa9ff89",
+        "type": "function",
+        "z": "ce922b35900aab9b",
+        "name": "Process Message",
+        "func": "msg.payload = {\"data\": msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 680,
+        "wires": [
+            [
+                "e2c5a54593afa2e5"
+            ]
+        ]
+    },
+    {
+        "id": "e2c5a54593afa2e5",
+        "type": "http request",
+        "z": "ce922b35900aab9b",
+        "name": "Send to FastAPI",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8123/inference-now",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 880,
+        "y": 680,
+        "wires": [
+            [
+                "3a8db9872d068555"
+            ]
+        ]
+    },
+    {
+        "id": "3fd8d497bcd71e3b",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Continuo",
+        "info": "# Continuo\nEste cenário foi feito para receber informações para o Trigger Continuo\n\nTem como objetivo ler a informação de **Start/Stop** de quem estiver publicando em um determinado link/rota configurado pelo usuário\n\nRota da qual aqui esta sendo utilizada como exemplo\n\n## __soda/vision/inference/continuous__\n\nO comando **start** serve para informar que a predição deve ser Iniciada\nO comando **stop** serve para informar que a predição deve ser Finalizada\n",
+        "x": 200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "dfb9fe966a4f7543",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Intervalado",
+        "info": "# Intervalada\nEste cenário foi feito para receber informações para o Trigger Intervalado/Momenâneo\n\nTem como objetivo ler qualquer informação de quem estiver publicando em um determinado link/rota configurado pelo usuário\n\nRota da qual aqui esta sendo utilizada como exemplo\n\n## __soda/vision/inference/interval__\n\nToda mensagem recebida nesse endereço, com a lógica inicial, irá realizar a inferência no momento em que receber a mensagem\n",
+        "x": 200,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bfba8cf004b02a11",
+        "type": "http request",
+        "z": "ce922b35900aab9b",
+        "name": "Send to FastAPI",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://host.docker.internal:8123/continuous-inference",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 880,
+        "y": 520,
+        "wires": [
+            [
+                "dc072e3ee1170d57"
+            ]
+        ]
+    },
+    {
+        "id": "cfe37453a9785ad7",
+        "type": "function",
+        "z": "ce922b35900aab9b",
+        "name": "Process Message",
+        "func": "msg.payload = {\"status\": msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 520,
+        "wires": [
+            [
+                "bfba8cf004b02a11"
+            ]
+        ]
+    },
+    {
+        "id": "51923727a082eea6",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Recebimento de informações",
+        "info": "# Recebimento\nAqui você pode configurar em um cenário onde pode-se receber informações para realizar inferencia em determinada situação especifica que desejar.\n\nO objetivo é endereçar o recebimento de informações vindas do ETL para que possam ser recebidas no Nodered\n\nNeste ambiente temos o recebimento de informações para endereços via MQTT\nE são duas rotas de receimento são orientadas ao Python,\n\nSeja para inferencia continua ou para inferencia intervalada/momentânea.",
+        "x": 140,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6c73997aacec3894",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Continuo Start",
+        "info": "# Continuo \n\nEste cenário foi feito para realização de envio de informações para o Trigger Continuo\n\nTem como objetivo de publicar a informação de start para quem estiver ouvindo em um determinado link/rota\n\nRota da qual aqui esta sendo utilizada como exemplo \n\n## __soda/vision/inference/continuous__\n\nO comando start serve para informar que a predição deve ser interrompida",
+        "x": 220,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "18a06faefe79c894",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Intervalado",
+        "info": "# Envio Intervalado \n\nEste cenário foi feito para realização de envio de informações para o Trigger Intervalado/Momentâneo\n\nTem como objetivo de publicar a informação de start para quem estiver ouvindo em um determinado link/rota\n\nRota da qual aqui esta sendo utilizada como exemplo \n\n## __soda/vision/inference/interval__",
+        "x": 200,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "49e2828be879e0c6",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Envio de informações",
+        "info": "# Envio\nAqui você pode configurar em um cenário de exemplo o envio de informações para determinado endereço.\n\nO objetivo é simular o envio de informações do ETL para que possam ser recebidas no Nodered\n\nNeste ambiente temos o envio de informações para endereços via MQTT\nE são duas rotas que são orientadas ao Python,\n\nSeja para inferencia continua ou para inferencia intervalada/momentânea.",
+        "x": 120,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "29749b32b57a8692",
+        "type": "mqtt out",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "topic": "soda/vision/inference/continuous",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "69b9909b3ce00894",
+        "x": 620,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7d716ec50e29deb5",
+        "type": "inject",
+        "z": "ce922b35900aab9b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "29749b32b57a8692"
+            ]
+        ]
+    },
+    {
+        "id": "8ed41680272bc054",
+        "type": "comment",
+        "z": "ce922b35900aab9b",
+        "name": "Continuo Stop",
+        "info": "# Continuo \n\nEste cenário foi feito para realização de envio de informações para o Trigger Continuo\n\nTem como objetivo de publicar a informação de start para quem estiver ouvindo em um determinado link/rota\n\nRota da qual aqui esta sendo utilizada como exemplo \n\n## __soda/vision/inference/continuous__\n\nO comando stop serve para informar que a predição deve ser interrompida",
+        "x": 220,
+        "y": 200,
+        "wires": []
+    }
+]

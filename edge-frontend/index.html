@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/logo_sv.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/marquee.css">
+  <link rel="stylesheet" href="/styles/w3-css/w3.css">
+  <title>Soda Vision Protótipo Inferência</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+  <div class="toast w3-panel" id="toast-status">
+    <p></p>
+  </div>
+  <main>
+    <div class="area">
+      <div></div>
+      <div class="card bg-white-box">
+        <h3>INFERÊNCIA | CLASSIFICAÇÃO</h3>
+        <div class="tooltip">
+          <span class="tooltiptext">
+            Para funcionar corretamente, é muito importante que todos os vídeos tenham sido capturados pela
+            mesma câmera e tenham as
+            mesmas dimensões.
+          </span>
+          <div class="model-features">
+            <button id="button-upload-model" class="button w3-2018-sailor-blue"
+              onclick="document.getElementById('input-file-model').click()">
+              Conferindo se modelo ja carregado
+            </button>
+            <input accept=".zip" id="input-file-model" type="file" hidden />
+          </div>
+          <p></p>
+        </div>
+        <div class="predict">
+          <div class="switch-wrapper" id="mask-container">
+            <svg id="svg-marquee-preparation" class="svg-marquee" width="400px" height="400px" viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect id="svg-line-marquee-preparation" class="svg-line-marquee" x="0" y="0" width="400" height="400"
+                fill-opacity="0"></rect>
+                <defs>
+                    <mask id="svg-mask-marquee-preparation">
+                        <rect x="0" y="0" width="400" height="400" fill="white"></rect>
+                        <rect id="marquee" x="0" y="0" width="400" height="400" fill="black"></rect>
+                    </mask>
+                </defs>
+                <rect x="0" y="0" width="400" height="400" fill="black" mask="url(#svg-mask-marquee-preparation)"
+                fill-opacity="0.7"></rect>
+            </svg>
+            <svg class="pause-video-hidden" height="400px" id="pause-video" viewbox="0 0 400 400" width="400px"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect fill="black" fill-opacity="0.7" height="400" width="400" x="0" y="0"></rect>
+            </svg>
+            <div class="tooltip">
+                <span id="tooltip-video-preparation" class="tooltiptext fix-tooltip-video-preparation tooltip-hidden">
+                  Caso queira selecionar apenas parte da imagem para que o restante seja descartado,
+                  clique e arraste sobre o vídeo
+                  para delimitar uma região de interesse. Para desfazer a seleção apenas clique sobre o
+                  vídeo.
+                </span>
+            <img draggable="false" id="stream-video" alt="Camera Stream">
+            <label class="switch">
+                <input checked="" id="enable-webcam" type="checkbox" />
+                <span class="slider round"></span>
+            </label>
+            </div>
+          </div>
+          <span id="text-video-dimensions" class="container-video-dimensions">x: 0, y: 0, largura: 0, altura:
+            0</span>
+
+          <div hidden>
+            <label for="input-video-source">Digite a fonte do stream de video (vazio = webcam):</label>
+            <input type="text" id="input-video-source" />
+          </div>
+        </div>
+      </div>
+      <div class="card bg-white-box">
+        <h3>PREDIÇÃO</h3>
+        <div class="prediction">
+          <h1 id="accuracy-text"></h1>
+        </div>
+        <div class="prediction-time">
+          <p id="time-text"></p>
+        </div>
+        <div class="advanced advanced-active" id="advanced-parameters">
+          <span>
+            Filtro:
+            <div class="input-holder">
+              <div class="tooltip">
+                <span class="tooltiptext">
+                  Este número define o a quantidade de classificações seguidas que devem ser feitas
+                  antes de considerar o valor
+                  como válido. Utilize este filtro para evitar falsos positivos. Lembrando que valores
+                  maiores farão com que
+                  demore para reconhecer as mudanças de predição.
+                </span>
+                <input id="input-filter" max="9999" maxlength="4" min="2" type="number" value="5" />
+              </div>
+            </div>
+          </span>
+        </div>
+        <button id="advanced-parameters-label">▽</button>
+        <button class="button w3-black" disabled="" id="predict">Predizer!</button>
+        <div class="output-values">
+          <div class="etl-endpoints">
+            <h4>Server:</h4>
+            <h4 class="adress">opc.tcp://192.168.1.XXX:53880/UA/VisionOPC</h4>
+          </div>
+          <div class="etl-endpoints">
+            <h4>Saída Classe (String) OPC:</h4>
+            <h4 class="adress">ns=1;s=classePrevista</h4>
+          </div>
+          <div class="etl-endpoints">
+            <h4>Saída Valor (Float) OPC:</h4>
+            <h4 class="adress">ns=1;s=valorPrevisto</h4>
+          </div>
+        </div>
+        <div></div>
+      </div>
+  </main>
+</body>
+
+</html>

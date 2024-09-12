@@ -1,0 +1,21 @@
+site_name: Docs | Soda Vision AutoML API
+repo_url: https://dev.azure.com/AMBEV-SA/AMBEVTECH-SUPPLY-BREWTECH-SODAVISION/_git/mvp-soda-vision
+repo_name: mvp-soda-vision
+edit_uri: https://dev.azure.com/AMBEV-SA/AMBEVTECH-SUPPLY-BREWTECH-SODAVISION/_git/mvp-soda-vision?path=/docs
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+markdown_extensions: 
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins: 
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [app]
